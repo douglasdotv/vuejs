@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning vue</title>
-</head>
-<body>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+  </head>
+  <body>
     <h1>Hello, vue :)</h1>
-</body>
+
+    <div id="app">
+      <div v-if="showBooks">
+        <p>{{ title }} - {{ author }} - {{ age }}</p>
+      </div>
+
+      <button @click="changeTitle('New Title')">Change title</button>
+
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide books</span>
+        <span v-else>Show books</span>
+      </button>
+
+      <div v-show="showBooks">
+        <p>Currently showing books</p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
