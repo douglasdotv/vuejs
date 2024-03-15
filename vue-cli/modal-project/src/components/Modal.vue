@@ -1,5 +1,5 @@
 <template>
-    <div class="backdrop" @click.self="closeModal">
+    <div class="backdrop" @click.right="closeModal">
         <div class="modal" :class="{ sale: theme === 'sale' }">
             <slot>Default content</slot>
             <div class="actions">
